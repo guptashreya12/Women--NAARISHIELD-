@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+	
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <script src="https://cdn.tailwindcss.com"></script> 
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Naari</title>
+    <style>
+      body {
+          background-image: url('https://images.unsplash.com/photo-1629654857513-1136aef1b10f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBpbmslMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww');
+          background-size: cover; /* Adjust as needed */
+          background-position: center; /* Adjust as needed */
+      }
+  </style>
+  </head>
+  <body>
+    
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+    <title>Naari Shield</title>
+    <style>
+        /* Additional styles for dropdown menu */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1
+        }
+        .card {
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .resource-image {
+            max-height: 250px; /* Slightly increased height */
+            object-fit: cover;
+        }
+        .resource-button {
+            background-color: #3eb6ea; /* Adjusted to a matching pink */
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .resource-button:hover {
+            background-color: #3d45b4; /* A darker shade for hover state */
+        }
+    </style>
+</head>
+<body>
+
+<div class="relative w-full bg-pink-400">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+        <div class="flex items-center space-x-2">
+            <!-- SVG Icon -->
+            <img src="/images/logo.png" alt="Logo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; top: 50%; left: 10%; transform: translate(-1%, 0%);">
+            <!-- Branding Text, with space-x-0 to remove gap -->
+            <div class="inline-flex items-center space-x-0">
+                <span style="font-family: 'Noto Sans Devanagari', sans-serif;">नारी</span>
+                <span class="font-bold">Shield</span>
+            </div>
+        </div>
+        <!-- Navigation Links -->
+        <div class="grow items-start lg:flex">
+            <ul class="ml-12 inline-flex space-x-8">
+                <li>
+                    <a href="index.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Home</a>
+                </li>
+                <!-- Dropdown Menu -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Resources</a>
+                    <div class="dropdown-menu">
+                        <a href="rights.html">Women-Rights</a>
+                        <a href="feature.html">Women-Safety Resources</a>
+                        
+                    </div>
+                </li>
+                <li>
+                    <a href="contacts.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Emergency-Contacts</a>
+                </li>
+                <li>
+                    <a href="helpline.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Helpline Numbers</a>
+                </li>
+                <li>
+                    <a href="message.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Community-Forum</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+    <!-- Self-Defense Resources -->
+    <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Self-Defense Resources</h2>
+            <p class="mb-4">Discover our curated list of physical self-defense techniques and nearby training centers to help you learn the essentials of personal protection.</p>
+            <a href="self-defense.html" class="resource-button">Explore Resources</a>
+        </div>
+        <div>
+            <img src="images/Screenshot 2024-04-07 215720.png" alt="Self-Defense" class="resource-image rounded-lg shadow-lg">
+        </div>
+    </div>
+
+    <!-- Virtual Self-Defense Resources -->
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="order-last md:order-first">
+            <img src="images/Screenshot 2024-04-07 214957.png" alt="Virtual Classes" class="resource-image rounded-lg shadow-lg">
+        </div>
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Virtual Self-Defense Classes</h2>
+            <p class="mb-4">Join virtual sessions led by expert instructors, learn self-defense from the comfort of your home, and stay prepared for any situation.</p>
+            <a href="virtual-classes.html" class="resource-button">Join Classes</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

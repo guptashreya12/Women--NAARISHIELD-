@@ -1,0 +1,70 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+#women-rights {
+    padding: 3rem 0;
+    background-color: #ffffff;
+}
+
+#women-rights h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333333;
+}
+
+.card {
+    background-color: #ffffff; /* Light background to contrast with pink navbar */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.card h3 {
+    color: #333; /* Dark color for readability */
+}
+
+.card p {
+    color: #666; /* Subtle color for descriptions */
+}
+
+.card a {
+    color: #007bff; /* Interactive element color */
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+}
+
+/* You might also consider a gradient background for the entire section or individual cards */
+#women-rights {
+    background: linear-gradient(135deg, #f9c5d1 0%, #9795ef 100%); /* Soft gradient background */
+    padding: 3rem 0;
+    color: #ffffff; /* Light text color for contrast */
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}

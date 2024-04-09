@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+    <title>Naari Shield</title>
+    <style>
+        /* Additional styles for dropdown menu */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1
+        }
+    </style>
+</head>
+<body>
+
+<div class="relative w-full bg-pink-400">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+        <div class="flex items-center space-x-2">
+            <!-- SVG Icon -->
+            <img src="/images/logo.png" alt="Logo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; top: 50%; left: 10%; transform: translate(-1%, 0%);">
+            <!-- Branding Text, with space-x-0 to remove gap -->
+            <div class="inline-flex items-center space-x-0">
+                <span style="font-family: 'Noto Sans Devanagari', sans-serif;">नारी</span>
+                <span class="font-bold">Shield</span>
+            </div>
+        </div>
+        <!-- Navigation Links -->
+        <div class="hidden grow items-start lg:flex">
+            <ul class="ml-12 inline-flex space-x-8">
+                <li>
+                    <a href="index.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Home</a>
+                </li>
+                <!-- Dropdown Menu -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Resources</a>
+                    <div class="dropdown-menu">
+                        <a href="rights.html">Women-Rights</a>
+                        <a href="feature.html">Women-Safety Resources</a>
+                        
+                    </div>
+                </li>
+                <li>
+                    <a href="contacts.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Emergency-Contacts</a>
+                </li>
+                <li>
+                    <a href="helpline.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Helpline Numbers</a>
+                </li>
+                <li>
+                    <a href="message.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Community-Forum</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Hero Section -->
+    <section id="issues" class="bg-white py-8">
+        <!-- <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Understanding Women's Rights</h2>
+            <p class="max-w-4xl mx-auto text-gray-600">
+                Women's rights encompass the social, political, and economic rights and entitlements of women and girls. These rights are fundamental for achieving gender equality and empowering women to participate fully in all aspects of society. Highlighting these rights, we advocate for equal opportunities, protection from discrimination, and the empowerment of women worldwide.
+            </p> -->
+        </div>
+
+        <section id="women-rights" class="py-12 bg-white">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Understanding Women's Rights</h2>
+                <p class="max-w-4xl mx-auto text-gray-600">
+                    Women's rights encompass the social, political, and economic rights and entitlements of women and girls. These rights are fundamental for achieving gender equality and empowering women to participate fully in all aspects of society. Highlighting these rights, we advocate for equal opportunities, protection from discrimination, and the empowerment of women worldwide.
+                </p>
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-3xl font-bold text-gray-800 mb-8"></h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Right 1 -->
+                    <div class="bg-gray-100 p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold text-gray-800">Right to Education</h3>
+                        <p class="text-gray-600 mt-2">Every woman and girl has the right to an education free from discrimination.</p>
+                        <a href="https://righttoeducation.in/" class="text-blue-600 hover:underline mt-4 inline-block">Read More</a>
+                    </div>
+                    <!-- Right 2 -->
+                    <div class="bg-gray-100 p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold text-gray-800">Right to Vote</h3>
+                        <p class="text-gray-600 mt-2">Women have the right to participate in political processes that affect them, their families, and their societies.</p>
+                        <a href="https://www.example.gov/right-to-vote" class="text-blue-600 hover:underline mt-4 inline-block">Read More</a>
+                    </div>
+                    <!-- Right 3 -->
+                    <div class="bg-gray-100 p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold text-gray-800">Equal Pay for Equal Work</h3>
+                        <p class="text-gray-600 mt-2">Women have the right to be paid the same as men for work of equal value.</p>
+                        <a href="https://www.example.gov/equal-pay" class="text-blue-600 hover:underline mt-4 inline-block">Read More</a>
+                    </div>
+                    <!-- Right 4 -->
+                    <div class="bg-gray-100 p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold text-gray-800">Freedom from Violence</h3>
+                        <p class="text-gray-600 mt-2">Women and girls have the right to live free from all forms of violence and harassment.</p>
+                        <a href="https://www.example.gov/freedom-from-violence" class="text-blue-600 hover:underline mt-4 inline-block">Read More</a>
+                    </div>
+                    <!-- Right 5 -->
+                    <div class="bg-gray-100 p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold text-gray-800">Reproductive Rights</h3>
+                        <p class="text-gray-600 mt-2">Women have the right to make decisions regarding their reproductive health, free from discrimination, coercion, or violence.</p>
+                        <a href="https://www.example.gov/reproductive-rights" class="text-blue-600 hover:underline mt-4 inline-block">Read More</a>
+                    </div>
+                    <!-- Right 6 -->
+                    <div class="bg-gray-100 p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold text-gray-800">Right to Work</h3>
+                        <p class="text-gray-600 mt-2">Women have the right to work and pursue a career without facing discrimination or harassment.</p>
+                        <a href="https://www.example.gov/right-to-work" class="text-blue-600 hover:underline mt-4 inline-block">Read More</a>
+                    </div>
+                    <!-- Right 7 -->
+                    <div class="bg-gray-100 p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold text-gray-800">Right to Health</h3>
+                        <p class="text-gray-600 mt-2">Women have the right to access health care and to receive gender-sensitive medical treatment.</p>
+                        <a href="https://www.example.gov/right-to-health" class="text-blue-600 hover:underline mt-4 inline-block">Read More</a>
+                    </div>
+                    <!-- Right 8 -->
+                    <div class="bg-gray-100 p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold text-gray-800">Protection from Discrimination</h3>
+                        <p class="text-gray-600 mt-2">Women have the right to live free from discrimination in all areas of life, including in employment, education, and healthcare.</p>
+                        <a href="https://www.example.gov/protection-from-discrimination" class="text-blue-600 hover:underline mt-4 inline-block">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+
+  

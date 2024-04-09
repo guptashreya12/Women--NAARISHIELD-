@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+	
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <script src="https://cdn.tailwindcss.com"></script> 
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Naari</title>
+    <style>
+      body {
+          background-image: url('https://images.unsplash.com/photo-1629654857513-1136aef1b10f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBpbmslMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww');
+          background-size: cover; /* Adjust as needed */
+          background-position: center; /* Adjust as needed */
+      }
+  </style>
+  </head>
+  <body>
+    
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+    <title>Naari Shield</title>
+    <style>
+        /* Additional styles for dropdown menu */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1
+        }
+    </style>
+</head>
+<body>
+
+<div class="relative w-full bg-pink-400">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+        <div class="flex items-center space-x-2">
+            <!-- SVG Icon -->
+            <img src="/images/logo.png" alt="Logo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; top: 50%; left: 10%; transform: translate(-1%, 0%);">
+            <!-- Branding Text, with space-x-0 to remove gap -->
+            <div class="inline-flex items-center space-x-0">
+                <span style="font-family: 'Noto Sans Devanagari', sans-serif;">नारी</span>
+                <span class="font-bold">Shield</span>
+            </div>
+        </div>
+        <!-- Navigation Links -->
+        <div class="hidden grow items-start lg:flex">
+            <ul class="ml-12 inline-flex space-x-8">
+                <li>
+                    <a href="index.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Home</a>
+                </li>
+                <!-- Dropdown Menu -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Resources</a>
+                    <div class="dropdown-menu">
+                        <a href="rights.html">Women-Rights</a>
+                        <a href="feature.html">Women-Safety Resources</a>
+                        
+                    </div>
+                </li>
+                <li>
+                    <a href="contacts.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Emergency-Contacts</a>
+                </li>
+                <li>
+                    <a href="helpline.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Helpline Numbers</a>
+                </li>
+                <li>
+                    <a href="message.html" class="text-sm font-semibold text-gray-800 hover:text-gray-900">Community-Forum</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Main content container -->
+<div class="relative w-full bg-white">
+    <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-2 lg:px-8">
+      <div class="flex flex-col justify-center px-7 py-10 md:py-10 lg:col-span-4 lg:gap-x-10 lg:px-6 lg:py-10 xl:col-span-6">
+        
+        <h1 class="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
+        
+          <span class="font-bold">Welcome to the</span><span style="font-family: 'Noto Sans Devanagari', sans-serif;"> नारी</span><br> Community Forum 
+        </h1>
+        <p class="mt-8 text-lg text-gray-700">
+            We believe in the power of sharing experiences, supporting one another, and fostering a community where women feel safe and empowered. Your voice matters, and your story can inspire and empower others. Welcome to our Community Forum, where you can anonymously share your experiences, insights, and thoughts.
+        </p>
+        <p class="mt-8 text-lg text-gray-700">
+            Ready to share your experience or contribute to the conversation? Fill out the form below to submit your story anonymously. Your voice has the power to make a difference and inspire change.
+        </p>
+       
+        
+      </div>
+      <div class="relative lg:col-span-5 lg:-mr-8 xl:col-span-6">
+        <img
+          class="aspect-[3/2] bg-gray-50 object-cover lg:aspect-[2/3] lg:h-[500px] xl:aspect-[16/9]"
+          src="/images/Screenshot (514).png"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  
+    
+    <!-- Image -->
+    
+    
+    <!-- Form to submit experience -->
+    <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Share Your Experience Anonymously</h2>
+        <!-- Form -->
+        <form id="messageForm">
+            <!-- Location -->
+            <div class="mb-4">
+                <label for="location" class="block text-gray-700">Location</label>
+                <input type="text" id="location" name="location" class="mt-1 p-2 block w-full rounded-md border border-gray-300" required>
+            </div>
+            <!-- Time of the incident -->
+            <div class="mb-4">
+                <label for="time" class="block text-gray-700">Time of the Incident</label>
+                <input type="datetime-local" id="time" name="time" class="mt-1 p-2 block w-full rounded-md border border-gray-300" required>
+            </div>
+            <!-- Description -->
+            <div class="mb-4">
+                <label for="description" class="block text-gray-700">Description</label>
+                <textarea id="description" name="description" rows="4" class="mt-1 p-2 block w-full rounded-md border border-gray-300" required></textarea>
+            </div>
+            <!-- Submit button -->
+            <button type="submit" class="bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-600 mr-2">Submit</button>
+            <!-- View experience button -->
+            <a href="view-experience.html" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400">View Experiences</a>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript to handle form submission and saving data locally -->
+<script>
+    // Function to handle form submission
+    document.getElementById("messageForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form values
+        var location = document.getElementById("location").value;
+        var time = document.getElementById("time").value;
+        var description = document.getElementById("description").value;
+
+        // Construct experience object
+        var experience = {
+            location: location,
+            time: time,
+            description: description
+        };
+
+        // Retrieve existing experiences from local storage or initialize an empty array
+        var experiences = JSON.parse(localStorage.getItem("experiences")) || [];
+
+        // Add the new experience to the experiences array
+        experiences.push(experience);
+
+        // Save the updated experiences array back to local storage
+        localStorage.setItem("experiences", JSON.stringify(experiences));
+
+        // Reset the form
+        document.getElementById("messageForm").reset();
+
+        // Inform the user that the experience has been submitted
+        alert("Your experience has been submitted successfully!");
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incidents by Community</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Adjust background image size and position */
+        .container {
+            background-image: url('https://cdn.thewire.in/wp-content/uploads/2023/11/28111747/image-1551-1200x600.png');
+            background-size: cover;
+            background-position: center;
+             background-color: rgba(255, 255, 255, 0.7);
+             padding: 20px;
+        }
+        .navbar {
+            background-color: #eecece;
+        }
+        /* Specific styles for the experiences container */
+        .experiences-container {
+            background-image: url('https://cdn.thewire.in/wp-content/uploads/2023/11/28111747/image-1551-1200x600.png');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay; /* Using blend mode for a white overlay effect */
+            background-color: rgba(255, 255, 255, 0.7); /* White color with opacity for blending */
+            padding: 20px;
+        }
+
+        /* Ensures the background image blend effect */
+        .experience-item {
+            background: inherit;
+        }
+
+        /* Additional CSS styles */
+        .back-link {
+            display: inline-block;
+            background-color: #f2f2f2;
+            color: #555;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-left: auto; /* Shift the element to the right */
+        }
+
+        .back-link:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+</head>
+
+
+<!-- Navbar -->
+<nav class="bg-pink-400">
+    <div class="container mx-auto px-4 py-2">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <!-- Logo -->
+                <img src="/images/logo.png" alt="Logo" class="w-12 h-12 rounded-full object-cover mr-2">
+                <!-- Branding Text -->
+                <div class="text-white font-bold text-xl">
+                    <span style="font-family: 'Noto Sans Devanagari', sans-serif;">नारी</span>
+                    <span class="font-bold">Shield</span>
+                </div>
+            </div>
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-white font-semibold hover:text-gray-200">Home</a>
+                <div class="relative">
+                    <a href="#" class="text-white font-semibold hover:text-gray-200">Resources</a>
+                    <div class="absolute top-full left-0 w-40 bg-white rounded-md shadow-md py-2 mt-1 hidden group-hover:block">
+                        <a href="rights.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Women-Rights</a>
+                        <a href="laws.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Women-Safety Resources</a>
+                    </div>
+                </div>
+                <a href="contacts.html" class="text-white font-semibold hover:text-gray-200">Emergency Contacts</a>
+                <a href="helpline.html" class="text-white font-semibold hover:text-gray-200">Helpline Numbers</a>
+                <a href="feature.html" class="text-white font-semibold hover:text-gray-200">Community-Forum</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden">
+                <button id="mobile-menu-button" class="text-white hover:text-gray-200 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden bg-pink-400 border-t border-white">
+        <div class="container mx-auto px-4 py-3">
+            <a href="index.html" class="block text-white font-semibold hover:text-gray-200 py-2">Home</a>
+            <div class="relative">
+                <a href="#" class="block text-white font-semibold hover:text-gray-200 py-2">Resources</a>
+                <div class="absolute top-full left-0 w-40 bg-white rounded-md shadow-md py-2 mt-1 hidden group-hover:block">
+                    <a href="rights.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Women-Rights</a>
+                    <a href="laws.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Women-Safety Laws</a>
+                </div>
+            </div>
+            <a href="contacts.html" class="block text-white font-semibold hover:text-gray-200 py-2">Emergency Contacts</a>
+            <a href="helpline.html" class="block text-white font-semibold hover:text-gray-200 py-2">Helpline Numbers</a>
+            <!-- <a href="message.html" class="block text-white font-semibold hover:text-gray-200 py-2">Community-Forum</a> -->
+        </div>
+    </div>
+</nav>
+
+<!-- Container for displaying messages with background image -->
+<div class="container mx-auto mt-8 experiences-container">
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-md shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">Experiences Shared by Community</h2>
+        <ul id="experienceList" class="divide-y divide-gray-200">
+            <!-- JavaScript will populate this list -->
+        </ul>
+    </div>
+    <a href="message.html" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 mt-4 inline-block">Back</a>
+</div>
+<!-- JavaScript to retrieve and display messages -->
+<script>
+    // JavaScript to retrieve and display experiences
+    var experiences = JSON.parse(localStorage.getItem("experiences")) || [];
+    var experienceList = document.getElementById("experienceList");
+
+    experiences.forEach(function(experience) {
+        var listItem = document.createElement("li");
+        listItem.classList.add("py-4", "flex", "justify-between", "items-center");
+
+        var experienceContent = document.createElement("div");
+        experienceContent.classList.add("flex-1", "pr-4");
+
+        var locationParagraph = document.createElement("p");
+        locationParagraph.classList.add("text-lg", "text-gray-800", "mb-2");
+        locationParagraph.textContent = "Location: " + experience.location;
+        experienceContent.appendChild(locationParagraph);
+
+        var dateTimeParagraph = document.createElement("p");
+        dateTimeParagraph.classList.add("text-lg", "text-gray-800", "mb-2");
+        dateTimeParagraph.textContent = "Time: " + experience.time;
+        experienceContent.appendChild(dateTimeParagraph);
+
+        var descriptionParagraph = document.createElement("p");
+        descriptionParagraph.classList.add("text-lg", "text-gray-800");
+        descriptionParagraph.textContent = "Description: " + experience.description;
+        experienceContent.appendChild(descriptionParagraph);
+
+        listItem.appendChild(experienceContent);
+        experienceList.appendChild(listItem);
+    });
+</script>
+
+</body>
+</html>
