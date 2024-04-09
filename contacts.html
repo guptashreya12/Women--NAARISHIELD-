@@ -192,6 +192,39 @@ tbody tr:hover {
   emailjs.init("yk4ye3JyKi5SXEB-G");
 </script> -->
 
+<button id="notifyHelpline">Notify Helpline</button>
+
+<script>
+document.getElementById('notifyHelpline').addEventListener('click', function() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        const locationUrl = `https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`;
+
+        // Fetch the helpline number from your list based on the user's region or selection.
+        const helplineNumber = '+1234567890'; // Replace with the actual helpline number.
+        
+        // Make a POST request to your backend to send the SMS.
+        fetch('/send-sms', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+                number: helplineNumber,
+                message: `Emergency! The user requires assistance at this location: ${locationUrl}`
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('The helpline has been notified.');
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }, function(error) {
+        alert('Error getting location: ' + error.message);
+    });
+});
+</script>
 
 
 
