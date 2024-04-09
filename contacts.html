@@ -182,7 +182,8 @@ tbody tr:hover {
 
                 <button type="button" id="addRowBtn" class="mt-4 bg-pink-500 text-white px-3 py-2 rounded-md hover:bg-pink-600">Add Contact</button>
                 <input type="submit" class="mt-4 bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-600" value="Submit Contacts">
-                <input type="notifyHelpline" class="mt-4 bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-600" value="Notify Helpline">
+                <input type="button" onclick="notifyHelpline()" class="mt-4 bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-600 cursor-pointer" value="Notify Helpline">
+    
             </div>
         </form>
         
@@ -196,54 +197,37 @@ tbody tr:hover {
 
 
 <script>
-document.getElementById('notifyHelpline').addEventListener('click', function() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        const locationUrl = `https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`;
-
-        // Fetch the helpline number from your list based on the user's region or selection.
-        const helplineNumber = '+1234567890'; // Replace with the actual helpline number.
-        
-        // Make a POST request to your backend to send the SMS.
-        fetch('/send-sms', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ 
-                number: helplineNumber,
-                message: `Emergency! The user requires assistance at this location: ${locationUrl}`
-            }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert('The helpline has been notified.');
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    }, function(error) {
-        alert('Error getting location: ' + error.message);
-    });
-});
-</script>
+    function notifyHelpline() {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(async position => {
+                const { latitude, longitude } = position.coords;
+                const locationUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+    
+                try {
+                    const response = await fetch('/send-sms', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({ message: `I need help! My location: ${locationUrl}` })
+                    });
+    
+                    const data = await response.json();
+                    console.log('SMS sent: ', data);
+                    alert('Helpline has been notified.');
+                } catch (error) {
+                    console.error('Error sending SMS: ', error);
+                    alert('Failed to notify helpline.');
+                }
+            }, () => {
+                alert('Failed to access your location.');
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
 
 
 
 
     
-    </section>
-    <!-- <script src="https://smtpjs.com/v3/smtp.js">
-        function sendemail(){
-            Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "castorhack23@gmail.com",
-    Password : "75F313B677E46ECA55253D2CEADD4808876B",
-    To : 'them@website.com',
-    From : "you@isp.com",
-    Subject : "This is the subject",
-    Body : "And this is the body"
-}).then(
-  message => alert(message)
-);
-        }
-    </script> -->
+    
+    </script> 
