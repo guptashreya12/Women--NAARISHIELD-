@@ -77,29 +77,17 @@ function sendLocationEmails() {
     navigator.geolocation.getCurrentPosition(function(position) {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-        // Ensure you're using backticks here for template literals
         const locationUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
 
-        // Now proceed with your logic to send this location URL in an email or otherwise
-        console.log(locationUrl); // This should output the correct URL
-        alert(locationUrl); // This should show an alert with the correct URL
-    }, function(error) {
-        console.error('Error getting location', error);
-        alert('Error getting location: ' + error.message);
-    });
-}
+        // Log the location URL to the console for debugging purposes
+        console.log(`Location URL: ${locationUrl}`);
+        
+        // Alert the user with the location URL
+        alert(`Your current location URL is: ${locationUrl}`);
 
+        // The rest of your email sending logic...
 
-// Function to send email
-// Function to send email to contacts with the user's location
-// function sendLocationEmails() {
-//     navigator.geolocation.getCurrentPosition(function(position) {
-//         const latitude = position.coords.latitude;
-//         const longitude = position.coords.longitude;
-//         const locationUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
-
-    
-//         // Fetch stored contacts from local storage
+         // Fetch stored contacts from local storage
         const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
         contacts.forEach(contact => {
             const webAppUrl = 'https://script.google.com/macros/s/AKfycby7ES6xeAlC1lonH3AgA0w_raJE5-BuPgOxGZLKikVSQYucio50chhz1k5-yKYvMQ8s/exec'; // Replace this with your actual Google Apps Script web app URL
@@ -118,6 +106,43 @@ function sendLocationEmails() {
             .then(() => console.log('Email sent successfully to ' + contact.email))
             .catch(error => console.error('Error sending email to ' + contact.email, error));
         });
+    
+    }, function(error) {
+        console.error('Error getting location', error);
+        alert('Error getting location: ' + error.message);
+    });
+}
+
+
+
+// Function to send email
+// Function to send email to contacts with the user's location
+// function sendLocationEmails() {
+//     navigator.geolocation.getCurrentPosition(function(position) {
+//         const latitude = position.coords.latitude;
+//         const longitude = position.coords.longitude;
+//         const locationUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+
+    
+//         // Fetch stored contacts from local storage
+//         const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+//         contacts.forEach(contact => {
+//             const webAppUrl = 'https://script.google.com/macros/s/AKfycby7ES6xeAlC1lonH3AgA0w_raJE5-BuPgOxGZLKikVSQYucio50chhz1k5-yKYvMQ8s/exec'; // Replace this with your actual Google Apps Script web app URL
+//             fetch(webAppUrl, {
+//                 method: 'POST',
+//                 mode: 'no-cors', // This is needed to avoid CORS errors, but you won't be able to read the response
+//                 body: JSON.stringify({
+//                     email: contact.email,
+//                     subject: 'My Current Location',
+//                     body: `Here is my current location: ${locationUrl}`
+//                 }),
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//             })
+//             .then(() => console.log('Email sent successfully to ' + contact.email))
+//             .catch(error => console.error('Error sending email to ' + contact.email, error));
+//         });
     
 //         alert('Location shared with contacts successfully!');
 //     }, function(error) {
