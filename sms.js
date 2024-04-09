@@ -100,24 +100,24 @@ function sendLocationEmails() {
 
     
 //         // Fetch stored contacts from local storage
-//         const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
-//         contacts.forEach(contact => {
-//             const webAppUrl = 'https://script.google.com/macros/s/AKfycby7ES6xeAlC1lonH3AgA0w_raJE5-BuPgOxGZLKikVSQYucio50chhz1k5-yKYvMQ8s/exec'; // Replace this with your actual Google Apps Script web app URL
-//             fetch(webAppUrl, {
-//                 method: 'POST',
-//                 mode: 'no-cors', // This is needed to avoid CORS errors, but you won't be able to read the response
-//                 body: JSON.stringify({
-//                     email: contact.email,
-//                     subject: 'My Current Location',
-//                     body: `Here is my current location: ${locationUrl}`
-//                 }),
-//                 headers: {
-//                     'Content-Type': 'application/json'
-//                 },
-//             })
-//             .then(() => console.log('Email sent successfully to ' + contact.email))
-//             .catch(error => console.error('Error sending email to ' + contact.email, error));
-//         });
+        const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+        contacts.forEach(contact => {
+            const webAppUrl = 'https://script.google.com/macros/s/AKfycby7ES6xeAlC1lonH3AgA0w_raJE5-BuPgOxGZLKikVSQYucio50chhz1k5-yKYvMQ8s/exec'; // Replace this with your actual Google Apps Script web app URL
+            fetch(webAppUrl, {
+                method: 'POST',
+                mode: 'no-cors', // This is needed to avoid CORS errors, but you won't be able to read the response
+                body: JSON.stringify({
+                    email: contact.email,
+                    subject: 'My Current Location',
+                    body: `Here is my current location: ${locationUrl}`
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            .then(() => console.log('Email sent successfully to ' + contact.email))
+            .catch(error => console.error('Error sending email to ' + contact.email, error));
+        });
     
 //         alert('Location shared with contacts successfully!');
 //     }, function(error) {
