@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Nearby Police Stations</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find Nearby Police Stations</h1>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize Leaflet map
+        const map = L.map('map');
+
+        // Add OpenStreetMap base layer to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Get user's location using Geolocation API
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const userLat = position.coords.latitude;
+                const userLon = position.coords.longitude;
+                
+                // Set the map view to the user's location
+                map.setView([userLat, userLon], 15);
+
+                // Perform a nearby search for police stations
+                fetch(`https://overpass-api.de/api/interpreter?data=[out:json][timeout:25];(node(around:5000,${userLat},${userLon})["amenity"="police"];way(around:5000,${userLat},${userLon})["amenity"="police"];relation(around:5000,${userLat},${userLon})["amenity"="police"];);out;`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Process the search results
+                        data.elements.forEach(element => {
+                            const marker = L.marker([element.lat, element.lon]).addTo(map);
+                            marker.bindPopup(`<b>${element.tags.name || 'Police Station'}</b><br>${element.tags['addr:housenumber'] || ''} ${element.tags['addr:street'] || ''}`);
+                        });
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            }, error => {
+                console.error('Error getting user location:', error);
+            });
+        } else {
+            console.error('Geolocation is not supported by this browser.');
+        }
+    </script>
+</body>
+</html>
